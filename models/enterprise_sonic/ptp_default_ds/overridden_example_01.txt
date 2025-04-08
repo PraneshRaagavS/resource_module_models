@@ -1,0 +1,34 @@
+# Using overridden
+#
+# Before State:
+# -------------
+#
+# sonic# show running-configuration ptp
+# ptp mode boundary-clock
+# ptp network-transport l2 multicast
+# ptp domain 35
+# ptp domain-profile g8275.1
+# ptp priority2 100
+# ptp log-announce-interval -3
+# ptp announce-timeout 5
+# ptp log-sync-interval -4
+# ptp log-min-delay-req-interval -4
+# sonic#
+
+  - name: Override device configuration of ptp with provided configuration
+    dellemc.enterprise_sonic.sonic_ptp:
+      config:
+        domain-number: 44
+        domain-profile: 'G.8275.2'
+        network-transport: 'ipv4'
+        unicast-multicast: 'unicast'
+      state: overridden
+
+# After State:
+# ------------
+#
+# sonic# show running-configuration ptp
+# ptp network-transport ipv4 unicast
+# ptp domain 44
+# ptp domain-profile g8275.2
+# sonic#

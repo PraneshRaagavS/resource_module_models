@@ -1,0 +1,30 @@
+# Using replaced
+#
+# Before State:
+# -------------
+#
+# sonic# do show running-configuration | grep "ptp port"
+#  ptp port add Ethernet0 role master local-priority 10
+#  ptp port add Ethernet1 local-priority 100
+#  ptp port add Ethernet2 role slave
+#  ptp port master-table Ethernet1 add 1.1.1.1
+# sonic#
+
+  - name: Replace PTP configurations for specified port
+    dellemc.enterprise_sonic.sonic_ptp_port_ds:
+      config:
+        - interface : 'Ethernet0'
+          role: 'slave'
+          unicasttable : '2.2.2.2'
+      state: replaced
+
+# After State:
+# ------------
+#
+# sonic# do show running-configuration | grep "ptp port"
+#  ptp port add Ethernet0 role slave
+#  ptp port add Ethernet1 local-priority 100
+#  ptp port add Ethernet2 role slave
+#  ptp port master-table Ethernet0 add 2.2.2.2
+#  ptp port master-table Ethernet1 add 1.1.1.1
+# sonic# 

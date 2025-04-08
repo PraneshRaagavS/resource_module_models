@@ -1,0 +1,23 @@
+# Using merged
+#
+# Before State:
+# -------------
+#
+# sonic# show running-configuration ptp | grep "ptp port"
+# ptp port add Ethernet0
+# sonic#
+
+  - name: Merge provided global PTP configurations
+    dellemc.enterprise_sonic.sonic_ptp_port_ds:
+      config:
+          - interface: 'Ethernet0'
+            role: 'slave'
+            localpriority: 100
+      state: merged
+
+# After State:
+# ------------
+#
+# sonic# show running-configuration ptp | grep "ptp port"
+# ptp port add Ethernet0 role slave local-priority 100
+# sonic#

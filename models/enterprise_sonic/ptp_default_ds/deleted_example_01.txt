@@ -1,0 +1,33 @@
+# Using deleted
+#
+# Before State:
+# -------------
+#
+# sonic# show running-configuration ptp
+# ptp network-transport l2 multicast
+# ptp domain 25
+# ptp domain-profile default
+# ptp priority1 101
+# ptp priority2 91
+# ptp log-announce-interval 1
+# ptp log-sync-interval -3
+# sonic#
+
+  - name: Delete specified PTP configurations
+    dellemc.enterprise_sonic.sonic_ptp:
+      config:
+          log-sync-interval: -3
+          log-announce-interval: 1
+          network-transport: 'L2'
+          unicast-multicast: 'multicast'
+          priority1 101
+          priority2 91
+          domain-number: 25
+      state: deleted
+
+# After State:
+# ------------
+#
+# sonic# show running-configuration ptp
+# ptp domain-profile default
+# sonic#

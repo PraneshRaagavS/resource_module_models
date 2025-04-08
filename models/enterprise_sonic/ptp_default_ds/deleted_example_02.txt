@@ -1,0 +1,30 @@
+# Using deleted
+#
+# Before State:
+# -------------
+#
+# sonic# show running-configuration ptp
+# ptp mode boundary-clock
+# ptp network-transport ipv6 unicast
+# ptp domain 45
+# ptp domain-profile g8275.2
+# ptp announce-timeout 3
+# sonic#
+
+  - name: Delete all PTP configurations
+    dellemc.enterprise_sonic.sonic_ptp:
+      config:
+          announce-receipt-timeout: 3
+          network-transport: 'ipv6'
+          unicast-multicast: 'unicast'
+          domain-number: 45
+          clock-type: 'BC'
+          domain-profile: 'G.8275.2'
+      state: deleted
+
+# After State:
+# ------------
+#
+# sonic# show running-configuration ptp
+
+# sonic#
