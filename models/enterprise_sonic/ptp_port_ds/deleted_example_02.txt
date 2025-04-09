@@ -15,7 +15,7 @@
           - interface: 'ethernet0'
             role: 'slave'
             localpriority: 100
-            unicasttable: "1.1.1.1"
+            unicasttable: ['1.1.1.1']
       state: deleted
 
 # After State:

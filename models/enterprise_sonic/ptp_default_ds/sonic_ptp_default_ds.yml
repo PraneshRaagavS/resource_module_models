@@ -71,23 +71,27 @@ DOCUMENTATION: |
               - Defines the type of clock configured in the PTP domain.
               - The possible values are (BC)|(P2P_TC)|(E2E_TC)|(disable)
             type: str
+            choices: ['BC', 'E2E_TC', 'P2P_TC', 'disable', '']
           network_transport:
             description:
               - The network transport used for communication
               - The permitted values are (L2)|(UDPv4)|(UDPv6)
             type: str
+            choices: ['L2', 'UDPv4', 'UDPv6']
           unicast_multicast:
             description:
               - Whether the network transport uses unicast or
               - multicast communication
               - The permitted values are (unicast)|(multicast)
             type: str
+            choices: ['unicast', 'multicast']
           domain_profile:
             description:
               - The method to be used when comparing data sets during
               - the Best Master Clock Algorithm.
               - The permitted values are (ieee1588)|(G.8275.1)|(G.8275.2)
             type: str
+            choices: ['ieee1588', 'G.8275.1', 'G.8275.2']
           source_interface:
             description:
               - Source interface whose IP to use as source ip for PTP IPv4

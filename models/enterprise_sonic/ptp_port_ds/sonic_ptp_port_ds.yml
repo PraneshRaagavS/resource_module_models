@@ -45,7 +45,7 @@ DOCUMENTATION: |
           unicasttable:
             description:
               - The comma-separated list of ip addresses to use for master.
-            type: str
+            type: list
       state:
         description:
           - The state of the configuration after module completion.
