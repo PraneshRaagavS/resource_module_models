@@ -71,7 +71,7 @@ DOCUMENTATION: |
               - Defines the type of clock configured in the PTP domain.
               - The possible values are (BC)|(P2P_TC)|(E2E_TC)|(disable)
             type: str
-            choices: ['BC', 'E2E_TC', 'P2P_TC', 'disable', '']
+            choices: ['BC', 'E2E_TC', 'P2P_TC', 'disable']
           network_transport:
             description:
               - The network transport used for communication
