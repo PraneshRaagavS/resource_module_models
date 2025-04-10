@@ -11,9 +11,9 @@
   - name: Override device configuration of PTP with provided configuration
     dellemc.enterprise_sonic.sonic_ptp_port_ds:
       config:
-          - interface: 'Ethernet4'
-            role: 'master'
-            localpriority: 90
+        - interface: 'Ethernet4'
+          role: 'master'
+          localpriority: 90
       state: overridden
 
 # After State:

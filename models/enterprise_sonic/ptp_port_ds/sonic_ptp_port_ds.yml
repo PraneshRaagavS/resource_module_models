@@ -27,18 +27,17 @@ DOCUMENTATION: |
         suboptions:
           interface:
             description:
-              - Reference to the configured underlying interface that is used by this PTP port.
+              - Specifies the name of the interface.
             required: true
             type: str
           role:
             description:
-              - Configures the role of interface.
-              - The range is from 1 to 4294967295.
+              - Specifies the role of interface.
             type: str
             choices: ['DYNAMIC', 'MASTER', 'SLAVE']
           localpriority:
             description:
-              - Configure the local-priority attribute used for the profile G8275-1 and G8275-2.
+              - Specifies the local-priority attribute used for the profile G8275-1 and G8275-2.
               - The range is from 1 to 255.
             type: int
             default: 
@@ -46,6 +45,7 @@ DOCUMENTATION: |
             description:
               - The comma-separated list of ip addresses to use for master.
             type: list
+            elements: str
       state:
         description:
           - The state of the configuration after module completion.

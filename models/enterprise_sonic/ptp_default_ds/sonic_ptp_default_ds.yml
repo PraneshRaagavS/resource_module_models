@@ -27,75 +27,71 @@ DOCUMENTATION: |
         suboptions:
           priority1:
             description:
-              - the priority1 attribute of the local clock.
-              - the range is from 0 to 255.
+              - The priority1 attribute of the local clock.
+              - The range is from 0 to 255.
             type: int
           priority2:
             description:
-              - the priority2 attribute of the local clock.
-              - the range is from 0 to 255.
+              - The priority2 attribute of the local clock.
+              - The range is from 0 to 255.
             type: int
           domain_number:
             description:
               - The domain number of the current syntonization domain.
-              - the range is from 0 to 127.
+              - The range is from 0 to 127.
             type: int
           log_announce_interval:
             description:
               - The base-2 logarithm of the mean announceInterval (mean time
-              -  interval between successive Announce messages)
+                interval between successive Announce messages).
             type: int
           announce_receipt_timeout:
             description:
               - The number of announceIntervals that have to pass
-              - without receipt of an Announce message before the
-              - occurrence of the event ANNOUNCE_RECEIPT_TIMEOUT_EXPIRES.
+                without receipt of an Announce message before the
+                occurrence of the event ANNOUNCE_RECEIPT_TIMEOUT_EXPIRES.
             type: int
           log_sync_interval:
             description:
-              - The base-2 logarithm of the mean SyncInterval
-              - for multicast messages.
+              - The base-2 logarithm of the mean SyncInterval for multicast messages.
             type: int
           log_min_delay_req_interval:
             description:
-              - The base-2 logarithm of the minDelayReqInterval.(The minimum
-              - permitted mean time interval between successive Delay_Req
-                messages)
+              - The base-2 logarithm of the minDelayReqInterval.
+              - The minimum permitted mean time interval between successive Delay_Req messages.
             type: int
           two_step_flag:
             description:
-              - The clockAccuracy indicates the expected accuracy of the clock
+              - The clockAccuracy indicates the expected accuracy of the clock.
             type: int
           clock_type:
             description:
-              - Defines the type of clock configured in the PTP domain.
+              - Specifies the type of clock configured in the PTP domain.
               - The possible values are (BC)|(P2P_TC)|(E2E_TC)|(disable)
             type: str
             choices: ['BC', 'E2E_TC', 'P2P_TC', 'disable']
           network_transport:
             description:
-              - The network transport used for communication
+              - The network transport used for communication.
               - The permitted values are (L2)|(UDPv4)|(UDPv6)
             type: str
             choices: ['L2', 'UDPv4', 'UDPv6']
           unicast_multicast:
             description:
-              - Whether the network transport uses unicast or
-              - multicast communication
+              - Specifies whether the network transport uses unicast or multicast communication.
               - The permitted values are (unicast)|(multicast)
             type: str
             choices: ['unicast', 'multicast']
           domain_profile:
             description:
-              - The method to be used when comparing data sets during
-              - the Best Master Clock Algorithm.
+              - The method to be used when comparing data sets during the Best Master Clock Algorithm.
               - The permitted values are (ieee1588)|(G.8275.1)|(G.8275.2)
             type: str
             choices: ['ieee1588', 'G.8275.1', 'G.8275.2']
           source_interface:
             description:
               - Source interface whose IP to use as source ip for PTP IPv4
-                and IPv6 multicast transport mode
+                and IPv6 multicast transport mode.
             type: str
 
       state:

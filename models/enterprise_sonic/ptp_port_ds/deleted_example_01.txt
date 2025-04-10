@@ -10,11 +10,11 @@
 # sonic#
 
   - name: Delete specified PTP configurations
-    dellemc.enterprise_sonic.sonic_ptp:
+    dellemc.enterprise_sonic.sonic_ptp_port_ds:
       config:
-          - interface: 'ethernet4'
-            role: 'master'
-            localpriority: 90
+        - interface: 'ethernet4'
+          role: 'master'
+          localpriority: 90
       state: deleted
 
 # After State:
