@@ -15,14 +15,14 @@
 # ptp log-min-delay-req-interval -4
 # sonic#
 
-  - name: Override device configuration of ptp with provided configuration
-    dellemc.enterprise_sonic.sonic_ptp:
-      config:
-        domain-number: 44
-        domain-profile: 'G.8275.2'
-        network-transport: 'ipv4'
-        unicast-multicast: 'unicast'
-      state: overridden
+- name: Override device configuration of ptp with provided configuration
+  dellemc.enterprise_sonic.sonic_ptp:
+    config:
+      domain-number: 44
+      domain-profile: 'G.8275.2'
+      network-transport: 'ipv4'
+      unicast-multicast: 'unicast'
+    state: overridden
 
 # After State:
 # ------------

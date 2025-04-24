@@ -7,13 +7,13 @@
 # ptp port add Ethernet0
 # sonic#
 
-  - name: Merge provided global PTP configurations
-    dellemc.enterprise_sonic.sonic_ptp_port_ds:
-      config:
-        - interface: 'Ethernet0'
-          role: 'slave'
-          localpriority: 100
-      state: merged
+- name: Merge provided global PTP configurations
+  dellemc.enterprise_sonic.sonic_ptp_port_ds:
+    config:
+      - interface: 'Ethernet0'
+        role: 'slave'
+        localpriority: 100
+    state: merged
 
 # After State:
 # ------------

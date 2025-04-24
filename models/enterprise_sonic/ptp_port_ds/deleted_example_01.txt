@@ -9,13 +9,13 @@
 # ptp port master-table Ethernet0 add 1.1.1.1
 # sonic#
 
-  - name: Delete specified PTP configurations
-    dellemc.enterprise_sonic.sonic_ptp_port_ds:
-      config:
-        - interface: 'ethernet4'
-          role: 'master'
-          localpriority: 90
-      state: deleted
+- name: Delete specified PTP configurations
+  dellemc.enterprise_sonic.sonic_ptp_port_ds:
+    config:
+      - interface: 'Ethernet4'
+        role: 'master'
+        localpriority: 90
+    state: deleted
 
 # After State:
 # ------------

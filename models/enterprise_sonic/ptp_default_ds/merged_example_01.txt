@@ -9,18 +9,18 @@
 # ptp priority2 100
 # sonic#
 
-  - name: Merge provided global PTP configurations
-    dellemc.enterprise_sonic.sonic_ptp:
-      config:
-        domain-profile: 'G.8275.1'
-        log-sync-interval: -4
-        log-announce-interval: -3
-        announce-receipt-timeout: 5
-        log-min-delay-req-interval: -4
-        clock-type: 'BC'
-        network-transport: 'L2'
-        unicast-multicast: 'multicast'
-      state: merged
+- name: Merge provided global PTP configurations
+  dellemc.enterprise_sonic.sonic_ptp:
+    config:
+      domain-profile: 'G.8275.1'
+      log-sync-interval: -4
+      log-announce-interval: -3
+      announce-receipt-timeout: 5
+      log-min-delay-req-interval: -4
+      clock-type: 'BC'
+      network-transport: 'L2'
+      unicast-multicast: 'multicast'
+    state: merged
 
 # After State:
 # ------------

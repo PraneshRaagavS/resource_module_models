@@ -13,17 +13,17 @@
 # ptp log-sync-interval -3
 # sonic#
 
-  - name: Delete specified PTP configurations
-    dellemc.enterprise_sonic.sonic_ptp:
-      config:
-        log-sync-interval: -3
-        log-announce-interval: 1
-        network-transport: 'L2'
-        unicast-multicast: 'multicast'
-        priority1: 101
-        priority2: 91
-        domain-number: 25
-      state: deleted
+- name: Delete specified PTP configurations
+  dellemc.enterprise_sonic.sonic_ptp:
+    config:
+      log-sync-interval: -3
+      log-announce-interval: 1
+      network-transport: 'L2'
+      unicast-multicast: 'multicast'
+      priority1: 101
+      priority2: 91
+      domain-number: 25
+    state: deleted
 
 # After State:
 # ------------
